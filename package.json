@@ -1,0 +1,29 @@
+{
+  "name": "nicoreen",
+  "version": "0.0.1",
+  "description": "PC画面上にコメントが流せるデスクトップアプリ「nicoreen」。",
+  "main": "bin.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuki540net/nicoreen.git"
+  },
+  "keywords": [
+    "nicoreen"
+  ],
+  "author": "yuki540",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuki540net/nicoreen/issues"
+  },
+  "homepage": "https://github.com/yuki540net/nicoreen#readme",
+  "dependencies": {
+    "coffee-script": "^1.12.4",
+    "electron": "^1.6.1",
+    "electron-packager": "^8.5.2",
+    "nicojs": "^1.1.1",
+    "twitter": "^1.7.0"
+  }
+}
