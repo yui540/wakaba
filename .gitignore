@@ -11,4 +11,4 @@ Icon?
 bin.js
 
 # views/jade
-views/jade/*.jade
+views/*.html
