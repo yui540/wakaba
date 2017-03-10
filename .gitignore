@@ -9,3 +9,6 @@ Icon?
 
 # bin.js
 bin.js
+
+# views/jade
+views/jade/*.jade
