@@ -1,69 +1,61 @@
-'use strict'
+(function() {
+  var BrowserWindow, app, electron, ipcMain, screenWindow, settingsWindow;
 
-const electron      = require('electron')
-,     app           = electron.app
-,     BrowserWindow = electron.BrowserWindow
-,     ipcMain       = electron.ipcMain
+  electron = require('electron');
 
-/* ready --------------------------------------------------------------------------- */
-app.on('ready', () => {
-	initWindow()
-})
+  app = electron.app;
 
-/* window-all-closed -------------------------------------------------------------- */
-app.on('window-all-closed', () => {
-	app.quit()
-})
+  BrowserWindow = electron.BrowserWindow;
 
-/**
- * 起動ウィンドウ
- */
-function initWindow() {
-	let win = new BrowserWindow({
-		width       : 600,
-		height      : 400,
-		transparent : true,
-		resizable   : false,
-		frame       : false,
-		show        : false
-	})
-	win.loadURL('file://' + __dirname + '/views/init.html')
+  ipcMain = electron.ipcMain;
 
-	/* ready-to-show ------------------------------------ */
-	win.on('ready-to-show', () => {
-		win.show()
-	})
+  app.on('ready', function() {
+    return settingsWindow();
+  });
 
-	/* closed ------------------------------------------- */
-	win.on('closed', () => {
-		win = null
-	})	
-}
+  app.on('window-all-closed', function() {
+    return app.quit();
+  });
 
-/**
- * スクリーンウィンドウ
- */
-function screenWindow() {
-	let size = electron.screen.getPrimaryDisplay().workArea
-	,   win  = new BrowserWindow({
-		width       : size.width,
-		height      : size.height,
-		transparent : true,
-		resizable   : false,
-		frame       : false,
-		alwaysOnTop : true,
-		show        : false
-	})
-	win.loadURL('file://' + __dirname + '/views/screen.html')
-	win.setIgnoreMouseEvents(true)
+  settingsWindow = function() {
+    var win;
+    win = new BrowserWindow({
+      width: 600,
+      height: 400,
+      transparent: true,
+      resizable: false,
+      frame: false,
+      show: false
+    });
+    win.loadURL('file://' + __dirname + '/views/settings.html');
+    win.on('ready-to-show', function() {
+      return win.show();
+    });
+    return win.on('closed', function() {
+      return win = null;
+    });
+  };
 
-	/* ready-to-show ------------------------------------ */
-	win.on('ready-to-show', () => {
-		win.show()
-	})
+  screenWindow = function() {
+    var size, win;
+    size = electron.screen.getPrimaryDisplay().workArea;
+    win = new BrowserWindow({
+      width: size.width,
+      height: size.height,
+      transparent: true,
+      resizable: false,
+      frame: false,
+      alwaysOnTop: true,
+      show: false
+    });
+    win.loadURL('file://' + __dirname + '/views/screen.html');
+    win.setIgnoreMouseEvents(true);
+    win.on('ready-to-show', function() {
+      return win.show();
+    });
+    return win.on('closed', function() {
+      return win = null;
+    });
+  };
 
-	/* closed ------------------------------------------- */
-	win.on('closed', () => {
-		win = null
-	})
-}
+}).call(this);
