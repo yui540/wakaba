@@ -1,20 +1,19 @@
 {
-  "name": "nicoreen",
+  "name": "Nicoreen",
   "version": "0.0.1",
-  "description": "PC画面上にコメントが流せるデスクトップアプリ「nicoreen」。",
-  "main": "bin.js",
+  "description": "PC画面上にコメントが流せるデスクトップアプリ「Nicoreen」",
+  "main": "bin/app.js",
   "scripts": {
-    "start": "electron .",
-    "watch": "gulp watch",
-    "compile": "gulp",
-    "build": ""
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yuki540net/nicoreen.git"
   },
   "keywords": [
-    "nicoreen"
+    "nicoreen",
+    "ニコニコ",
+    "コメント"
   ],
   "author": "yuki540",
   "license": "MIT",
@@ -22,20 +21,13 @@
     "url": "https://github.com/yuki540net/nicoreen/issues"
   },
   "homepage": "https://github.com/yuki540net/nicoreen#readme",
-  "dependencies": {
-    "nicojs": "^1.1.1",
-    "twitter": "^1.7.0"
-  },
   "devDependencies": {
-    "browserify": "^14.1.0",
-    "coffee-script": "^1.12.4",
     "electron": "^1.6.2",
-    "electron-packager": "^8.5.2",
-    "gulp": "^3.9.1",
-    "gulp-coffee": "^2.3.4",
-    "gulp-jade": "^1.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-uglify": "^2.1.0",
-    "vinyl-source-stream": "^1.1.0"
+    "electron-packager": "^8.5.2"
+  },
+  "dependencies": {
+    "nicojs": "^1.1.2",
+    "node-twitter-api": "^1.8.0",
+    "twitter": "^1.7.0"
   }
 }
