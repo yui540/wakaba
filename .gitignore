@@ -6,3 +6,6 @@ Icon?
 
 # .DS_Store
 .DS_Store
+
+# config/accounts.json
+config/accounts.json

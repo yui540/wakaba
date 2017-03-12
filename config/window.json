@@ -1,0 +1,17 @@
+{
+	"login" : {
+		"width"     : 400,
+		"height"    : 500,
+		"resizable" : false
+	},
+	"controller" : {
+		"width"       : 400,
+		"height"      : 300,
+		"resizable"   : false,
+		"frame"       : false,
+		"transparent" : true
+	},
+	"screen" : {
+		
+	}
+} 
