@@ -1,32 +1,42 @@
 {
-  "name": "Nicoreen",
+  "name": "Wakaba",
   "version": "0.0.1",
-  "description": "PC画面上にコメントが流せるデスクトップアプリ「Nicoreen」",
+  "description": "PC画面上にコメントが流せるデスクトップアプリ「Wakaba」",
   "main": "bin/app.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "coffee -o ./bin -c ./bin/*.coffee"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuki540net/nicoreen.git"
+    "url": "git+https://github.com/yuki540net/Wakaba.git"
   },
   "keywords": [
-    "nicoreen",
+    "Wakaba",
+    "niconico",
     "ニコニコ",
     "コメント"
   ],
   "author": "yuki540",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yuki540net/nicoreen/issues"
+    "url": "https://github.com/yuki540net/Wakaba/issues"
   },
-  "homepage": "https://github.com/yuki540net/nicoreen#readme",
+  "homepage": "https://github.com/yuki540net/Wakaba#readme",
   "devDependencies": {
+    "browserify": "^14.1.0",
+    "coffee-script": "^1.12.4",
     "electron": "^1.6.2",
-    "electron-packager": "^8.5.2"
+    "electron-packager": "^8.5.2",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.4",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-riot": "^1.1.0",
+    "riot": "^3.3.2"
   },
   "dependencies": {
-    "nicojs": "^1.1.2",
+    "nicojs": "^1.1.3",
     "node-twitter-api": "^1.8.0",
     "twitter": "^1.7.0"
   }
