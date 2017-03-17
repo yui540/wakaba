@@ -1,6 +1,6 @@
 view-box
 	section.area.log-area
-
+		log-box
 	section.area.main-rea
 		menu-box
 		editor
@@ -11,7 +11,7 @@ view-box
 		:scope {
 			position: absolute;
 			top: 30px;
-			left: -400px;
+			left: 0px;
 			display: block;
 			width: 1200px;
 			height: 240px;

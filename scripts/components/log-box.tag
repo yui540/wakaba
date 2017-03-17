@@ -8,9 +8,6 @@ log-box
 
 	style(scoped).
 		:scope {
-			position: absolute;
-			top: 30px;
-			left: 0;
 			display: block;
 			width: 400px;
 			height: 240px;
@@ -18,7 +15,13 @@ log-box
 		}
 
 	script(type="coffee").
-		@comments = []
+		@comments = [
+			{
+				name    : 'yuki540'
+				icon    : 'https://pbs.twimg.com/profile_images/803212533800701954/d76ZFsX-_400x400.jpg'
+				message : 'Hello world...' 
+			}
+		]
 
 		# tweet ----------------------------------------------------------
 		observer.on 'tweet', (data) =>
