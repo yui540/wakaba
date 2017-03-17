@@ -12,6 +12,9 @@
 		"transparent" : true
 	},
 	"screen" : {
-		
+		"resizable"   : false,
+		"frame"       : false,
+		"alwaysOnTop" : true,
+		"transparent" : true
 	}
 } 
