@@ -13,6 +13,7 @@ comment
 			width: 400px;
 			padding: 10px;
 			box-sizing: border-box;
+			animation: show_comment 0.6s ease 0s forwards;
 		}
 		:scope:after {
 			content: "";
@@ -25,6 +26,7 @@ comment
 			height: 50px;
 			border-radius: 3px;
 			background-size: cover;
+			background-color: #fff;
 		}
 		:scope .rect {
 			float: left;
@@ -52,4 +54,15 @@ comment
 		:scope .info .message {
 			font-size: 12px;
 			color: #4c4c4c;
+		}
+
+		@keyframes show_comment {
+			0%   { 
+				transform: scale(0.9);
+				opacity: 0; 
+			}
+			100% { 
+				transform: scale(1.0);
+				opacity: 1; 
+			}
 		}

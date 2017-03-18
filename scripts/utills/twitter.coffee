@@ -10,28 +10,25 @@ class TwitterUtill
 			access_token_key    : accounts.access_token
 			access_token_secret : accounts.access_token_secret
 
-		@stream = null
-
 	##
 	# 受信
 	# @param keyword : キーワード
 	# @param fn      : コールバック関数
 	##
 	on: (keyword, fn) ->
-		@stream = @client.stream 'statuses/filter', { track: keyword }
+		@client.stream 'statuses/filter', { track: keyword }, (stream) =>
+			# data -------------------------------------------------------
+			stream.on 'data', (event) =>
+				data = 
+					message : event.text
+					name    : event.user.name
+					icon    : event.user.profile_image_url
 
-		# data -------------------------------------------------------
-		@stream.on 'data', (event) =>
-			data = 
-				message : event.text
-				name    : event.user.name
-				icon    : event.user.profile_image_url
+				fn data
 
-			fn data
-
-		# erro -------------------------------------------------------
-		@stream.on 'error', (err) =>
-			console.log 'ツイート取得失敗'
+			# erro -------------------------------------------------------
+			stream.on 'error', (err) =>
+				console.log err
 
 	##
 	# 受信を中断

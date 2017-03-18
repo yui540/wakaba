@@ -53,6 +53,7 @@ log-box
 
 		# tweet ----------------------------------------------------------
 		observer.on 'tweet', (data) =>
-
+			@comments.unshift data
+			@update()
 
 
