@@ -27,10 +27,10 @@ log-box
 		}
 		:scope .back-log {
 			position: absolute;
-			bottom: 10px;
+			top: 10px;
 			right: 10px;
-			width: 40px;
-			height: 40px;
+			width: 30px;
+			height: 30px;
 			background-color: #222;
 			border: solid 1px #D57774;
 			border-radius: 50%;
