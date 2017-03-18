@@ -5,28 +5,28 @@ view-box
 		menu-box
 		editor
 	section.area.settings-area
-
+		settings-box
 
 	style(scoped).
 		:scope {
 			position: absolute;
 			top: 30px;
-			left: 0px;
+			left: -400px;
 			display: block;
 			width: 1200px;
 			height: 240px;
 		}
 		:scope[data-state="show-log-area"] {
-			animation: show_log_area 0.5s ease 0s forwards;
+			animation: show_log_area 0.3s ease 0s forwards;
 		}
 		:scope[data-state="hidden-log-area"] {
-			animation: hidden_log_area 0.5s ease 0s forwards;	
+			animation: hidden_log_area 0.3s ease 0s forwards;	
 		}
 		:scope[data-state="show-settings-area"] {
-			animation: show_settings_area 0.5s ease 0s forwards;
+			animation: show_settings_area 0.3s ease 0s forwards;
 		}
 		:scope[data-state="hidden-settings-area"] {
-			animation: hidden_settings_area 0.5s ease 0s forwards;	
+			animation: hidden_settings_area 0.3s ease 0s forwards;	
 		}
 		:scope:after {
 			content: "";
@@ -43,7 +43,7 @@ view-box
 			0%   { left: -400px; }
 			100% { left: 0px; } 
 		}
-		@keyframes close_log_area {
+		@keyframes hidden_log_area {
 			0%   { left: 0px; }
 			100% { left: -400px; } 
 		}
@@ -52,7 +52,7 @@ view-box
 			0%   { left: -400px; }
 			100% { left: -800px; } 
 		}
-		@keyframes close_settings_area {
+		@keyframes hidden_settings_area {
 			0%   { left: -800px; }
 			100% { left: -400px; } 
 		}

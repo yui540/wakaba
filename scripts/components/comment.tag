@@ -43,13 +43,13 @@ comment
 			box-sizing: border-box;
 		}
 		:scope .info .name {
-			font-size: 12px;
+			font-size: 10px;
 			color: #222;
 			border-bottom: solid 1px #eee;
 			padding-bottom: 5px;
 			margin-bottom: 5px;
 		}
 		:scope .info .message {
-			font-size: 16px;
+			font-size: 12px;
 			color: #4c4c4c;
 		}
