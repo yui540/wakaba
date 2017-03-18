@@ -20,8 +20,8 @@ log-box
 		:scope .inner {
 			position: absolute;
 			top: 0;
-			left: 0;
-			width: 400px;
+			left: 50px;
+			width: 300px;
 			height: 240px;
 			overflow: auto;
 		}

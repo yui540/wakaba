@@ -10,10 +10,11 @@ comment
 	style(scoped).
 		:scope {
 			display: block;
-			width: 400px;
+			width: 300px;
 			padding: 10px;
 			box-sizing: border-box;
-			animation: show_comment 0.6s ease 0s forwards;
+			margin: 0 auto;
+			animation: show_comment 1s ease 0s forwards;
 		}
 		:scope:after {
 			content: "";
@@ -22,8 +23,8 @@ comment
 		}
 		:scope .icon {
 			float: left;
-			width: 50px;
-			height: 50px;
+			width: 40px;
+			height: 40px;
 			border-radius: 3px;
 			background-size: cover;
 			background-color: #fff;
@@ -38,7 +39,7 @@ comment
 		}
 		:scope .info {
 			float: left;
-			width: 310px;
+			width: 200px;
 			border-radius: 3px;
 			background-color: #fff;
 			padding: 5px;
