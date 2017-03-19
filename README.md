@@ -8,7 +8,7 @@ PC画面上にコメントが流せるElectron製のデスクトップアプリ�
 ![panel](./__sample__/panel.png)
 
 ## Demo
-　動作を確認したい場合は、[こちら]()にデモ動画があります。
+　動作を確認したい場合は、[こちら](https://twitter.com/eriri_jp/status/843348414305783808)にデモ動画があります。
 
 ## Usage
 ### ダウンロード
