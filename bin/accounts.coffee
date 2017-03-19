@@ -39,4 +39,13 @@ class Accounts
 		catch
 			return false
 
+	##
+	# アカウントの消去
+	##
+	remove: ->
+		try
+			return @fs.unlinkSync @f_path
+		catch
+			return false
+
 module.exports = new Accounts()

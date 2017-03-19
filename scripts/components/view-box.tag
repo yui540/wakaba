@@ -4,6 +4,7 @@ view-box
 	section.area.main-rea
 		menu-box
 		editor
+		keyword(keyword="#Hello world")
 	section.area.settings-area
 		settings-box
 

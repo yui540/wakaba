@@ -21,6 +21,10 @@ class Window
 		@views[name].close()
 		@views[name] = null
 
+		if name is 'controller'
+			@views['screen'].close()
+			@views['screen'] = null
+
 	##
 	# ウィンドウを最小化
 	# @param name : window名
@@ -106,7 +110,7 @@ class Window
 
 		match = url.match(/\?oauth_token=([^&]*)&oauth_verifier=([^&]*)/)
 		if not match
-			@reLogin()
+			@views.login.reload()
 			return false
 
 		# アクセストークンの取得
@@ -125,7 +129,7 @@ class Window
 	##
 	getAccessToken: (err, access_token, access_token_secret) ->
 		if err
-			@reLogin()
+			@views.login.reload()
 			return false
 
 		# アカウントの書き込み
@@ -134,12 +138,5 @@ class Window
 
 		# コールバック実行
 		@fn()
-
-	##
-	# 再ログイン要求
-	##
-	reLogin: ->
-		@close 'login'
-		@showLogin()
 
 module.exports = new Window()

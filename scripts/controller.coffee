@@ -14,6 +14,7 @@ top.observer = riot.observable()
 ##
 require './components/title-bar'
 require './components/view-box'
+require './components/keyword'
 require './components/log-box'
 require './components/comment'
 require './components/settings-box'

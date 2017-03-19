@@ -14,7 +14,7 @@ editor
 			width: 300px;
 			height: 50px;
 			margin: 0 auto;
-			margin-bottom: 50px;
+			margin-bottom: 20px;
 		}
 		:scope:after {
 			content: "";
@@ -55,14 +55,28 @@ editor
 			background-position: center;
 			background-size: 60%;
 			background-repeat: no-repeat;
+			cursor: pointer;
 		}
 
-	script.
+	script(type="coffee").
 		@onSubmit = (e) =>
 			keyword = @root.children[0].value.replace /(<|>|\(|\)|{|})/g, ''
 
+			if keyword is ''
+				alert 'キーワードを入力してください。'
+
+			##
+			# Twitter API Request
+			##
 			twitter.on keyword, (data) =>
-				console.log data
+				observer.trigger 'tweet', data
+				ipc.send         'tweet', data
+			, (err) =>
+				observer.trigger 'tweet-error', err
+
+			# イベント発火
+			observer.trigger 'change-keyword', keyword
+
 
 
 

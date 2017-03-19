@@ -27,6 +27,9 @@ app.on 'ready', ->
 ipc.on 'close', (event, name) ->
 	win.close name
 
+	if name is 'login'
+		app.quit()
+
 # mini -----------------------------------------------------------------
 ipc.on 'mini', (event, name) ->
 	win.mini name
@@ -50,3 +53,9 @@ ipc.on 'show-comment', (event, data) ->
 # hidden comment -------------------------------------------------------
 ipc.on 'hidden-comment', (event, data) ->
 	win.send 'screen', 'hidden-comment', data 
+
+# logout ---------------------------------------------------------------
+ipc.on 'logout', (event, data) ->
+	Accounts.remove()
+	win.close 'controller'
+	app.quit()

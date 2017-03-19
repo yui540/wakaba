@@ -17,7 +17,7 @@ menu-box
 		:scope {
 			display: block;
 			width: 400px;
-			margin: 40px 0;
+			margin: 20px 0;
 		}
 		:scope:after {
 			content: "";

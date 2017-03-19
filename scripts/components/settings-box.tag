@@ -114,4 +114,4 @@ settings-box
 		# ログアウト
 		##
 		@logout = ->
-			observer.trigger 'logout'
+			ipc.send 'logout'
