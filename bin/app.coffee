@@ -21,7 +21,7 @@ app.on 'ready', ->
 	# ログインしている
 	else
 		win.showController _controller
-		#win.showScreen     _screen
+		win.showScreen     _screen
 
 # close ----------------------------------------------------------------
 ipc.on 'close', (event, name) ->
@@ -34,3 +34,19 @@ ipc.on 'mini', (event, name) ->
 # tweet ----------------------------------------------------------------
 ipc.on 'tweet', (event, data) ->
 	win.send 'screen', 'tweet', data 
+
+# font size ------------------------------------------------------------
+ipc.on 'font-size', (event, data) ->
+	win.send 'screen', 'font-size', data 
+
+# color ----------------------------------------------------------------
+ipc.on 'color', (event, data) ->
+	win.send 'screen', 'color', data 
+
+# show comment ---------------------------------------------------------
+ipc.on 'show-comment', (event, data) ->
+	win.send 'screen', 'show-comment', data 
+
+# hidden comment -------------------------------------------------------
+ipc.on 'hidden-comment', (event, data) ->
+	win.send 'screen', 'hidden-comment', data 
