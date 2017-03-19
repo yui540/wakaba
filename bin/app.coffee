@@ -23,6 +23,10 @@ app.on 'ready', ->
 		win.showController _controller
 		win.showScreen     _screen
 
+# window all closed ----------------------------------------------------
+app.on 'window-all-closed', ->
+	app.quit()
+
 # close ----------------------------------------------------------------
 ipc.on 'close', (event, name) ->
 	win.close name
