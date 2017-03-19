@@ -33,10 +33,10 @@ slider(style="width:{ width }px")
 		}
 
 	script(type="coffee").
-		@width   = opts.width
-		@min     = opts.min
-		@max     = opts.max
-		@default = opts.default
+		@width   = parseInt opts.width
+		@min     = parseInt opts.min
+		@max     = parseInt opts.max
+		@default = parseInt opts.default
 		@range   = @max - @min
 		@per     = @default / @range
 
@@ -63,11 +63,12 @@ slider(style="width:{ width }px")
 			else if @per < 0
 				@per = 0
 
+			font_size = @range * @per + @min
+			font_size = font_size.toFixed 0
+
 			# イベント発火
-			observer.trigger 'font-size', 
-				per : @per
-				min : @min
-				max : @max
+			observer.trigger 'font-size', font_size
+			ipc.send         'font-size', font_size
 
 			# 描画
 			@update()

@@ -76,10 +76,10 @@ menu-box
 
 			# 表示
 			if state is 'show'
-				ipc.send 'show-comment'
+				ipc.send 'hidden-comment'
 				ele.setAttribute 'data-state', 'hidden'
 
 			# 非表示
 			else
-				ipc.send 'hidden-comment'
+				ipc.send 'show-comment'
 				ele.setAttribute 'data-state', 'show'

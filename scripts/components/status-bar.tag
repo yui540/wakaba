@@ -74,9 +74,8 @@ status-bar
 		@user      = []
 
 		# font size -------------------------------------------------
-		observer.on 'font-size', (data) =>
-			range      = data.max - data.min
-			@font_size = (range * data.per).toFixed 0
+		observer.on 'font-size', (font_size) =>
+			@font_size = font_size
 
 			# 描画
 			@update()
@@ -101,4 +100,3 @@ status-bar
 
 			# 描画
 			@update()
-

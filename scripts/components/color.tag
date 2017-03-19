@@ -22,4 +22,6 @@ color(
 		# 文字色の変更
 		##
 		@onClick = ->
+			# イベント発火
 			observer.trigger 'color', @color
+			ipc.send 'color', @color
