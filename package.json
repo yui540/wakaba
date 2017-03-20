@@ -7,7 +7,9 @@
     "start": "electron .",
     "build": "gulp",
     "watch": "gulp watch",
-    "package:mac": "electron-packager . wakaba --platform=darwin --arch=x64 --version=1.6.2 --icon=icons/icon.icns --overwrite"
+    "package:mac": "electron-packager . wakaba --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
+    "package:win": "electron-packager . wakaba --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
+    "package:linux": "electron-packager . wakaba --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
   },
   "repository": {
     "type": "git",
