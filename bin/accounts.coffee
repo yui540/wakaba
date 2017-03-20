@@ -1,51 +1,41 @@
 class Accounts
 	constructor: () ->
-		@fs     = require 'fs'
-		@path   = require 'path'
-		@f_path = @path.join __dirname, '../config/accounts.json'
-
-	##
-	# アカウントがあるか
-	##
-	isAccounts: ->
-		try
-			@fs.readFileSync @f_path, 'utf8'
-			return true
-		catch e
-			return false
+		@storage = require 'electron-json-storage'
 
 	##
 	# アカウントの書き込み
-	# @param access_token : アクセストークン
+	# @param access_token        : アクセストークン
 	# @param access_token_secret : アクセストークンシークレット
+	# @param fn                  : コールバック関数
 	##
-	write: (access_token, access_token_secret) ->
-		try
-			json = JSON.stringify
-				access_token        : access_token
-				access_token_secret : access_token_secret
+	write: (access_token, access_token_secret, fn) ->
+		json = JSON.stringify
+			access_token        : access_token
+			access_token_secret : access_token_secret
 
-			@fs.writeFileSync @f_path, json, 'utf8'
-			return true
-		catch e
-			return false
+		@storage.set 'accounts', json, (err) =>
+			fn()
 
 	##
 	# アクセストークンの読み込み
+	# @param fn : コールバック関数
 	##
-	read: ->
-		try
-			return JSON.parse @fs.readFileSync @f_path, 'utf8'
-		catch
-			return false
+	read: (fn) ->
+		@storage.get 'accounts', (err, data) =>
+			if err
+				fn false
+				return
+			if data is undefined or Object.keys(data).length is 0
+				fn false
+			else
+				fn data
 
 	##
 	# アカウントの消去
+	# @param fn : コールバック関数
 	##
-	remove: ->
-		try
-			return @fs.unlinkSync @f_path
-		catch
-			return false
+	remove: (fn) ->
+		@storage.set 'accounts', {}, (err) =>
+			fn()
 
 module.exports = new Accounts()

@@ -37,6 +37,7 @@
     "gulp-riot": "^1.1.0"
   },
   "dependencies": {
+    "electron-json-storage": "^3.0.1",
     "nicojs": "^1.1.3",
     "node-twitter-api": "^1.8.0",
     "riot": "^3.3.2",

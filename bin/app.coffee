@@ -11,17 +11,18 @@ _screen     = path.join 'file://', __dirname, '../views/screen.html'
 
 # ready ----------------------------------------------------------------
 app.on 'ready', ->
-	# ログインしていない
-	if not Accounts.isAccounts()
-		win.showLogin ->
+	Accounts.read (data) =>
+		# ログインしていない
+		if data is false
+			win.showLogin ->
+				win.showController _controller
+				win.showScreen     _screen
+				win.close 'login'
+
+		# ログインしている
+		else
 			win.showController _controller
 			win.showScreen     _screen
-			win.close 'login'
-
-	# ログインしている
-	else
-		win.showController _controller
-		win.showScreen     _screen
 
 # window all closed ----------------------------------------------------
 app.on 'window-all-closed', ->
@@ -60,6 +61,6 @@ ipc.on 'hidden-comment', (event, data) ->
 
 # logout ---------------------------------------------------------------
 ipc.on 'logout', (event, data) ->
-	Accounts.remove()
-	win.close 'controller'
-	app.quit()
+	Accounts.remove =>
+		win.close 'controller'
+		app.quit()

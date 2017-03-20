@@ -2,13 +2,15 @@ class TwitterUtill
 	constructor: ->
 		Twitter     = require 'twitter'
 		credentials = require '../../config/credentials.json'
-		accounts    = require '../../config/accounts.json'
+		Accounts    = require '../../bin/accounts'
 
-		@client = new Twitter
-			consumer_key        : credentials.consumer_key
-			consumer_secret     : credentials.consumer_secret
-			access_token_key    : accounts.access_token
-			access_token_secret : accounts.access_token_secret
+		Accounts.read (accounts) =>
+			accounts = JSON.parse accounts
+			@client = new Twitter
+				consumer_key        : credentials.consumer_key
+				consumer_secret     : credentials.consumer_secret
+				access_token_key    : accounts.access_token
+				access_token_secret : accounts.access_token_secret
 
 		@stream = null
 

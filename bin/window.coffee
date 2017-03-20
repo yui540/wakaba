@@ -134,9 +134,7 @@ class Window
 
 		# アカウントの書き込み
 		Accounts = require './accounts'
-		Accounts.write access_token, access_token_secret
-
-		# コールバック実行
-		@fn()
+		Accounts.write access_token, access_token_secret, =>
+			@fn()
 
 module.exports = new Window()
