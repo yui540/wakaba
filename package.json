@@ -2,14 +2,14 @@
   "name": "wakaba",
   "version": "0.0.1",
   "description": "PC画面上にコメントが流せるデスクトップアプリ「wakaba」",
-  "main": "bin/app.js",
+  "main": "src/bin/app.js",
   "scripts": {
     "start": "electron .",
     "build": "gulp",
     "watch": "gulp watch",
-    "package:mac": "electron-packager . wakaba --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
-    "package:win": "electron-packager . wakaba --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
-    "package:linux": "electron-packager . wakaba --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
+    "package:mac": "electron-packager . wakaba --out=__release__ --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
+    "package:win": "electron-packager . wakaba --out=__release__ --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite",
+    "package:linux": "electron-packager . wakaba --out=__release__ --platform=linux --arch=x64 --icon=icons/icon.icns --overwrite"
   },
   "repository": {
     "type": "git",

@@ -16,3 +16,6 @@ scripts/components/*.js
 
 # html
 views/*.html
+
+# release
+__release__
