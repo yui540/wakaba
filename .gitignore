@@ -1,21 +1,15 @@
 # .DS_Store
 .DS_Store
 
-# wakaba_app
-wakaba-*
-
 # node_modules
 node_modules/
 
-# config/accounts.json
-config/accounts.json
-
 # js
-bin/*.js
-scripts/components/*.js
+src/bin/*.js
+src/scripts/components/*.js
 
 # html
-views/*.html
+src/views/*.html
 
 # release
 __release__
