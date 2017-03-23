@@ -7,35 +7,35 @@ browserify = require 'browserify'
 
 # CoffeeScript
 gulp.task 'coffee', ->
-	gulp.src './bin/*.coffee'
+	gulp.src './src/bin/*.coffee'
 		.pipe plumber()
 		.pipe coffee()
-		.pipe gulp.dest './bin'
+		.pipe gulp.dest './src/bin'
 
 # Riot.js
 gulp.task 'riot', ->
-	gulp.src './scripts/components/*.tag'
+	gulp.src './src/scripts/components/*.tag'
 		.pipe plumber()
 		.pipe riot 
 			compact  : true
 			type     : 'coffeescript'
 			template : 'jade'
-		.pipe gulp.dest './scripts/components'
+		.pipe gulp.dest './src/scripts/components'
 
 # Jade
 gulp.task 'jade', ->
-	gulp.src './views/*.jade'
+	gulp.src './src/views/*.jade'
 		.pipe plumber()
 		.pipe jade()
-		.pipe gulp.dest './views'
+		.pipe gulp.dest './src/views'
 
 gulp.task 'default', ['coffee', 'riot', 'jade']
 
 gulp.task 'watch', ->
 	gulp.watch [
-		'./bin/*.coffee'
-		'./scripts/components/*.tag'
-		'./views/*.jade'
+		'./src/bin/*.coffee'
+		'./src/scripts/components/*.tag'
+		'./src/views/*.jade'
 	],
 	[
 		'coffee'
