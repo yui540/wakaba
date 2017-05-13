@@ -4,9 +4,9 @@
 
 ![panel](./__sample__/panel.png)
 
-- Shuviについての紹介ページ
+- 若葉についての紹介ページ
   - [Qiita - ElectronでPC画面上にコメントが流せるデスクトップアプリを作ってみた](http://qiita.com/yuki540/items/bd122f4105eb6dc4c9c4)
-- Shuviのダウンロード
+- 若葉のダウンロード
   - [GitHub - Releases](https://github.com/yuki540net/wakaba/releases/tag/v0.0.1)
 - デモ動画
   - [Twitter - 「若葉」のデモ動画](https://twitter.com/eriri_jp/status/843348414305783808)
