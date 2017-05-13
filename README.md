@@ -1,26 +1,23 @@
-# wakaba
-PC画面上にコメントが流せるElectron製のデスクトップアプリ。
-
+# 若葉 - wakaba
+「若葉」は、PC画面上にコメントが流せるElectron製のデスクトップアプリです。
 コメントはTwitterから特定のキーワードを含むツイートを取得して流します。
-
-イベントやライブコーディングの時に使うと面白いかもしれません。
 
 ![panel](./__sample__/panel.png)
 
-## Demo
-　動作を確認したい場合は、デモ動画がTwitterにあります。
- 
- [https://twitter.com/eriri_jp/status/843348414305783808](https://twitter.com/eriri_jp/status/843348414305783808)
+- Shuviについての紹介ページ
+  - [Qiita - ElectronでPC画面上にコメントが流せるデスクトップアプリを作ってみた](http://qiita.com/yuki540/items/bd122f4105eb6dc4c9c4)
+- Shuviのダウンロード
+  - [GitHub - Releases](https://github.com/yuki540net/wakaba/releases/tag/v0.0.1)
+- デモ動画
+  - [Twitter - 「若葉」のデモ動画](https://twitter.com/eriri_jp/status/843348414305783808)
+- 開発者
+  - yuki540
+  - [Twitter - @eriri_jp](https://twitter.com/eriri_jp)
+  - [HP - yuki540.com](http://yuki540.com)
 
 ## Usage
 ### ダウンロード
 GitHubの[リリースページ](https://github.com/yuki540net/wakaba/releases)からダウンロードすることができます。
-
-~~何故か、Windows版のパッケージ化ができないのでMac版しかありません。
-そのうち、Windows版もパッケージ化します。
-手元にWindowsがないので、動作の保証はできませんが試したい方は自前でパッケージ化してください。~~
-
-Mac / Windows / Linuxのパッケージ化が完了しました。
 
 ### Twitterにログイン
 まず、Twitterにログインしてください。
