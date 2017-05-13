@@ -9,7 +9,7 @@
 - Shuviのダウンロード
   - [GitHub - Releases](https://github.com/yuki540net/wakaba/releases/tag/v0.0.1)
 - デモ動画
-  - [Twitter - 「若葉」のデモ動画](https://twitter.com/eriri_jp/status/843348414305783808)
+  - [Twitter - 「若葉」のデモ動画](https://twitter.com/eriri_jp/status/843348414305783808)
 - 開発者
   - yuki540
   - [Twitter - @eriri_jp](https://twitter.com/eriri_jp)
