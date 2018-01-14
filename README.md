@@ -48,5 +48,5 @@ GitHubの[リリースページ](https://github.com/yuki540net/wakaba/releases)�
 ![toggle](./__sample__/toggle_1.png)
 ![toggle](./__sample__/toggle_2.png)
 
-## Lisence
-このソフトウェアは、MIT Lisenceのもとで公開されています。
+## Lisense
+このソフトウェアは、MIT Lisenseのもとで公開されています。
